@@ -2,6 +2,7 @@
     <string name="app_name">My Games</string>
     <string name="game_name">Game Name</string>
     <string name="description">Description</string>
+    <string name="about">About</string>
 
     <string-array name="data_name">
         <item>Pokemon Go</item>
@@ -13,6 +14,7 @@
         <item>Marvel Snap</item>
         <item>Among Us</item>
         <item>Rocket League Sideswipe</item>
+        <item>League of Legends: Wild Rift</item>
     </string-array>
 
     <string-array name="data_description">
@@ -26,6 +28,7 @@
         <item>Marvel Snap, a digital collectible card game developed by a team including ex-Hearthstone developers, quickly gained popularity after its 2022 release. It received critical acclaim and has maintained its success through regular content updates, card design changes, and a dynamic PvP metagame. The focus on collectible variant card arts has also kept players engaged and invested well into 2024.</item>
         <item>Among Us became a global sensation in 2020, two years after its release, especially during the pandemic. This social deduction game has captivated players by pitting crewmates against each other as they complete tasks in space while trying to identify the hidden monster among them.</item>
         <item>Rocket League Sideswipe brings the high-energy action of Rocket League to mobile with a 2D twist, making it well-suited for mobile gameplay. While it sacrifices some of the 3D mobility of the original game, it retains the core competitive spirit and flashy style that fans love.</item>
+        <item>Wild Rift condenses the traditional 5–on–5 gameplay to suit mobile players, featuring shorter respawn times, faster gold gain, and a smaller map to encourage more frequent combat. Matches are around 15–20 minutes long, roughly half the duration of the PC version, making it a great choice for those with less free time but still wanting a full League of Legends experience.</item>
     </string-array>
 
     <integer-array name="data_photo">
@@ -38,6 +41,7 @@
         <item>@drawable/marvel_snap</item>
         <item>@drawable/among_us</item>
         <item>@drawable/rocket_league</item>
+        <item>@drawable/league_of_legends</item>
     </integer-array>
 
 </resources>
