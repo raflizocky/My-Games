@@ -1,3 +1,43 @@
 <resources>
     <string name="app_name">My Games</string>
+    <string name="game_name">Game Name</string>
+    <string name="description">Description</string>
+
+    <string-array name="data_name">
+        <item>Pokemon Go</item>
+        <item>Honkai: Star Rail</item>
+        <item>Call of Duty: Mobile</item>
+        <item>Reigns: Her Majesty</item>
+        <item>Genshin Impact</item>
+        <item>Hello Kitty Island Adventure</item>
+        <item>Marvel Snap</item>
+        <item>Among Us</item>
+        <item>Rocket League Sideswipe</item>
+    </string-array>
+
+    <string-array name="data_description">
+        <item>Pokémon GO, despite its initial challenges and a metascore below 80, has become a staple in mobile gaming since its launch in 2016. The game has evolved significantly, with regular content updates and a growing roster of creatures, making it hard to imagine the mobile gaming world without it. Developer Niantic adapted well to early issues and the COVID-19 pandemic, refining the game to work smoothly across devices and locations. Pokémon GO continues to offer a consistently updated experience and shows no signs of slowing down.</item>
+        <item>Honkai: Star Rail is a mobile RPG set in a unique sci-fi world with a compelling story full of political intrigue, world-ending threats, and amnesiac heroes. Its turn-based combat is ideal for Android and iOS, making it easy to play on the go without worrying about precise timing. The game is also available on PlayStation 5, fitting well as a live-service console RPG.</item>
+        <item>Call of Duty: Mobile is one of the top mobile shooters, launching in 2019 with instant success—reaching 270 million downloads and generating over $480 million in its first year. It delivers the action-packed, weapon-focused gameplay that Call of Duty fans expect, with less emphasis on precise aiming compared to games like CS or Valorant.</item>
+        <item>Reigns: Her Majesty, developed by Nerial and published by Devolver Digital, is a standalone sequel to the popular Reigns. In this strategy game, players take on the role of a queen who must navigate decisions influenced by her advisors, each with their own agendas. The Queen\'s choices determine the fate of her kingdom, with consequences for every action.</item>
+        <item>Genshin Impact, the second HoYoverse title on this list, debuted in 2020 to some initial criticism as a "Breath of the Wild clone." However, it quickly proved its worth, becoming a highly profitable fantasy RPG with five unique regions and extensive main quest content comparable to AAA RPGs.</item>
+        <item>Hello Kitty Island Adventure, released in 2023, became an unexpected hit, drawing inspiration from Animal Crossing while adding the unique charm of Sanrio characters. Players start by creating a character and soon find themselves on an island after their plane, carrying Sanrio stars, makes an emergency landing. The goal is to restore the island to its former glory.</item>
+        <item>Slay the Spire is a landmark in deckbuilding games, setting the standard for the genre and inspiring titles like Monster Train and Across the Obelisk. Its streamlined design allowed it to transition smoothly to mobile, launching on iOS in 2020 and Android in 2021.</item>
+        <item>Marvel Snap, a digital collectible card game developed by a team including ex-Hearthstone developers, quickly gained popularity after its 2022 release. It received critical acclaim and has maintained its success through regular content updates, card design changes, and a dynamic PvP metagame. The focus on collectible variant card arts has also kept players engaged and invested well into 2024.</item>
+        <item>Among Us became a global sensation in 2020, two years after its release, especially during the pandemic. This social deduction game has captivated players by pitting crewmates against each other as they complete tasks in space while trying to identify the hidden monster among them.</item>
+        <item>Rocket League Sideswipe brings the high-energy action of Rocket League to mobile with a 2D twist, making it well-suited for mobile gameplay. While it sacrifices some of the 3D mobility of the original game, it retains the core competitive spirit and flashy style that fans love.</item>
+    </string-array>
+
+    <integer-array name="data_photo">
+        <item>@drawable/pokemon_go</item>
+        <item>@drawable/honkai_star_rail</item>
+        <item>@drawable/cod_mobile</item>
+        <item>@drawable/reigns_her_majesty</item>/
+        <item>@drawable/genshin_impact</item>/
+        <item>@drawable/hello_kitty</item>
+        <item>@drawable/marvel_snap</item>
+        <item>@drawable/among_us</item>
+        <item>@drawable/rocket_league</item>
+    </integer-array>
+
 </resources>
