@@ -32,6 +32,7 @@ class DetailActivity : AppCompatActivity() {
         val profileImage: ImageView = findViewById(R.id.profile_image)
         val detailTitle: TextView = findViewById(R.id.detail_title)
         val detailDescription: TextView = findViewById(R.id.detail_description)
+        val detailInfo = findViewById<TextView>(R.id.detail_info)
         val shareButton = findViewById<Button>(R.id.action_share)
 
         val datagame = if (Build.VERSION.SDK_INT >= 33) {
@@ -45,6 +46,7 @@ class DetailActivity : AppCompatActivity() {
             detailTitle.text = it.name
             detailDescription.text = it.description
             profileImage.setImageResource(it.photo)
+            detailInfo.text = it.info
         }
 
         shareButton.setOnClickListener {

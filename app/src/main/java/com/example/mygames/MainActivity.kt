@@ -37,10 +37,11 @@ class MainActivity : AppCompatActivity() {
         val dataName = resources.getStringArray(R.array.data_name)
         val dataDescription = resources.getStringArray(R.array.data_description)
         val dataPhoto = resources.obtainTypedArray(R.array.data_photo)
+        val dataInfo = resources.getStringArray(R.array.data_info)
 
         val listGame = ArrayList<Game>()
         for (i in dataName.indices) {
-            val game = Game(dataName[i], dataDescription[i], dataPhoto.getResourceId(i, -1))
+            val game = Game(dataName[i], dataDescription[i], dataPhoto.getResourceId(i, -1), dataInfo[i])
             listGame.add(game)
         }
         return listGame
