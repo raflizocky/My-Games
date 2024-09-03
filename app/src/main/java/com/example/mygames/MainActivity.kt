@@ -10,25 +10,27 @@ import androidx.core.splashscreen.SplashScreen.Companion.installSplashScreen
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
 import androidx.recyclerview.widget.LinearLayoutManager
-import androidx.recyclerview.widget.RecyclerView
+import com.example.mygames.databinding.ActivityMainBinding
 
 class MainActivity : AppCompatActivity() {
-    private lateinit var rvGames: RecyclerView
     private val list = ArrayList<Game>()
+    private lateinit var binding: ActivityMainBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {
         installSplashScreen()
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_main)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+
+        binding = ActivityMainBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
 
-        rvGames = findViewById(R.id.rv_games)
-        rvGames.setHasFixedSize(true)
+        binding.rvGames.setHasFixedSize(true)
         list.addAll(getListGames())
         showRecyclerList()
     }
@@ -48,9 +50,9 @@ class MainActivity : AppCompatActivity() {
     }
 
     private fun showRecyclerList() {
-        rvGames.layoutManager = LinearLayoutManager(this)
+        binding.rvGames.layoutManager = LinearLayoutManager(this)
         val listGameAdapter = ListGameAdapter(list)
-        rvGames.adapter = listGameAdapter
+        binding.rvGames.adapter = listGameAdapter
     }
 
     override fun onCreateOptionsMenu(menu: Menu?): Boolean {

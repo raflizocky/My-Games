@@ -2,24 +2,22 @@ package com.example.mygames
 
 import android.content.Intent
 import android.view.LayoutInflater
-import android.view.View
 import android.view.ViewGroup
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
+import com.example.mygames.databinding.ItemRowGamesBinding
 
 class ListGameAdapter(private val listGame: ArrayList<Game>) : RecyclerView.Adapter<ListGameAdapter.ListViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ListViewHolder {
-        val view: View = LayoutInflater.from(parent.context).inflate(R.layout.item_row_games, parent, false)
-        return ListViewHolder(view)
+        val binding = ItemRowGamesBinding.inflate(LayoutInflater.from(parent.context), parent, false)
+        return ListViewHolder(binding)
     }
 
     override fun onBindViewHolder(holder: ListViewHolder, position: Int) {
         val (name, description, photo) = listGame[position]
-        holder.imgPhoto.setImageResource(photo)
-        holder.tvName.text = name
-        holder.tvDescription.text = description
+        holder.binding.imgItemPhoto.setImageResource(photo)
+        holder.binding.tvItemName.text = name
+        holder.binding.tvItemDescription.text = description
 
         holder.itemView.setOnClickListener {
             val intentDetail = Intent(holder.itemView.context, DetailActivity::class.java)
@@ -30,9 +28,5 @@ class ListGameAdapter(private val listGame: ArrayList<Game>) : RecyclerView.Adap
 
     override fun getItemCount(): Int = listGame.size
 
-    class ListViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imgPhoto: ImageView = itemView.findViewById(R.id.img_item_photo)
-        val tvName: TextView = itemView.findViewById(R.id.tv_item_name)
-        val tvDescription: TextView = itemView.findViewById(R.id.tv_item_description)
-    }
+    class ListViewHolder(val binding: ItemRowGamesBinding) : RecyclerView.ViewHolder(binding.root)
 }

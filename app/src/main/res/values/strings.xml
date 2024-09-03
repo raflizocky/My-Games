@@ -7,7 +7,6 @@
     <string name="my_name">Rafli Zocky Leonard</string>
     <string name="my_email">raflizocky@gmail.com</string>
     <string name="title_detail">Title</string>
-    <string name="description_detail">Description Detail</string>
     <string name="detail_info">Game Info</string>
 
     <string-array name="data_name">

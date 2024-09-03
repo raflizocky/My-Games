@@ -5,35 +5,32 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
-import android.widget.Button
-import android.widget.ImageView
-import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.view.ViewCompat
 import androidx.core.view.WindowInsetsCompat
+import com.example.mygames.databinding.ActivityDetailBinding
 
 class DetailActivity : AppCompatActivity() {
     companion object {
         const val KEY_GAME = "key_game"
     }
 
+    private lateinit var binding: ActivityDetailBinding
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
-        setContentView(R.layout.activity_detail)
-        ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main)) { v, insets ->
+        binding = ActivityDetailBinding.inflate(layoutInflater)
+        setContentView(binding.root)
+
+        ViewCompat.setOnApplyWindowInsetsListener(binding.root) { v, insets ->
             val systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars())
             v.setPadding(systemBars.left, systemBars.top, systemBars.right, systemBars.bottom)
             insets
         }
-        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
-        val profileImage: ImageView = findViewById(R.id.profile_image)
-        val detailTitle: TextView = findViewById(R.id.detail_title)
-        val detailDescription: TextView = findViewById(R.id.detail_description)
-        val detailInfo = findViewById<TextView>(R.id.detail_info)
-        val shareButton = findViewById<Button>(R.id.action_share)
+        supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         val datagame = if (Build.VERSION.SDK_INT >= 33) {
             intent.getParcelableExtra(KEY_GAME, Game::class.java)
@@ -43,15 +40,17 @@ class DetailActivity : AppCompatActivity() {
         }
 
         datagame?.let {
-            detailTitle.text = it.name
-            detailDescription.text = it.description
-            profileImage.setImageResource(it.photo)
-            detailInfo.text = it.info
+            with(binding) {
+                detailTitle.text = it.name
+                detailDescription.text = it.description
+                profileImage.setImageResource(it.photo)
+                detailInfo.text = it.info
+            }
         }
 
-        shareButton.setOnClickListener {
+        binding.actionShare.setOnClickListener {
             shareButtonClicked(
-                "Hello! I\'ve just downloaded an app that contains some beautiful games recommendations. Check it out!\nLink: https://www.dicoding.com/home"
+                "Hello! I’ve just downloaded an app that contains some beautiful games recommendations. Check it out!\nLink: https://www.dicoding.com/home"
             )
         }
     }
