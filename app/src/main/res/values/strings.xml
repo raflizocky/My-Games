@@ -3,6 +3,8 @@
     <string name="game_name">Game Name</string>
     <string name="description">Description</string>
     <string name="about">About</string>
+    <string name="my_name">Rafli Zocky Leonard</string>
+    <string name="my_email">raflizocky@gmail.com</string>
 
     <string-array name="data_name">
         <item>Pokemon Go</item>
