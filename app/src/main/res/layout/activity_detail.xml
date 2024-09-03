@@ -28,6 +28,16 @@
             style="@style/DetailDescriptionStyle"
             android:layout_below="@+id/detail_title"
             android:text="@string/description_detail" />
+
+        <Button
+            android:id="@+id/action_share"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/detail_description"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="30dp"
+            android:text="@string/share" />
     </RelativeLayout>
 
 </ScrollView>

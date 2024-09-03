@@ -5,6 +5,7 @@ import android.os.Build
 import android.os.Bundle
 import android.view.Menu
 import android.view.MenuItem
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.activity.enableEdgeToEdge
@@ -16,7 +17,7 @@ class DetailActivity : AppCompatActivity() {
     companion object {
         const val KEY_GAME = "key_game"
     }
-   
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         enableEdgeToEdge()
@@ -27,13 +28,14 @@ class DetailActivity : AppCompatActivity() {
             insets
         }
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        
+
         val profileImage: ImageView = findViewById(R.id.profile_image)
         val detailTitle: TextView = findViewById(R.id.detail_title)
         val detailDescription: TextView = findViewById(R.id.detail_description)
-        
+        val shareButton = findViewById<Button>(R.id.action_share)
+
         val datagame = if (Build.VERSION.SDK_INT >= 33) {
-            intent.getParcelableExtra(KEY_GAME ,Game::class.java)
+            intent.getParcelableExtra(KEY_GAME, Game::class.java)
         } else {
             @Suppress("DEPRECATION")
             intent.getParcelableExtra(KEY_GAME)
@@ -43,6 +45,12 @@ class DetailActivity : AppCompatActivity() {
             detailTitle.text = it.name
             detailDescription.text = it.description
             profileImage.setImageResource(it.photo)
+        }
+
+        shareButton.setOnClickListener {
+            shareButtonClicked(
+                "Hello! I\'ve just downloaded an app that contains some beautiful games recommendations. Check it out!\nLink: https://www.dicoding.com/home"
+            )
         }
     }
 
@@ -57,12 +65,21 @@ class DetailActivity : AppCompatActivity() {
                 finish()
                 return true
             }
-            R.id.action_about -> {
+
+            R.id.about_page -> {
                 val aboutIntent = Intent(this, AboutActivity::class.java)
                 startActivity(aboutIntent)
                 return true
             }
         }
         return super.onOptionsItemSelected(item)
+    }
+
+    private fun shareButtonClicked(description: String) {
+        val shareIntent = Intent(Intent.ACTION_SEND)
+        shareIntent.type = "text/plain"
+        shareIntent.putExtra(Intent.EXTRA_TEXT, description)
+
+        startActivity(Intent.createChooser(shareIntent, "Share via"))
     }
 }
