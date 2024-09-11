@@ -4,23 +4,15 @@
 
 ## Demo 🪟 
 
-<p align="center"> 
-  <img src="demo-img/home.jpg" width="30%" alt="Demo 1" /> 
-  <img src="demo-img/detail-share.jpg" width="30%" alt="Demo 2" /> 
-  <img src="demo-img/about.jpg" width="30%" alt="Demo 3" /> 
-</p> 
+<img src="demo-img/home.jpg" width="249" alt="Demo 1" />  <img src="demo-img/detail-share.jpg" width="249" alt="Demo 2" /> <img src="demo-img/about.jpg" width="249" alt="Demo 3" /> 
 
-## Tools ⚙️ 
+## Setup ⚙️🛠️
 
-- **Android Studio Iguana**
-- **Gradle**
-- **OpenJDK**
-- **Kotlin**
-
-## Libraries 📔 
-- **Parcelable**
-- **View Binding**
-- **Circle Image View**
-- **Splash Screen**
+| Tools                                                 | Installation                                  |
+| ----------------------------------------------------- | --------------------------------------------- |
+| - **Android Studio Iguana**                           | -  **Clone the Repository**                   |
+| - **Gradle**                                          | - Open the Project in Android Studio          |
+| - **OpenJDK**                                         | - Run the App                                 |
+| - **Kotlin**                                          |                                               | 
 
 ---
